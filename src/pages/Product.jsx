@@ -62,6 +62,8 @@ const InfoContainer = styled.div`
   align-items: center; justify-content: center;
   @media (max-width: 900px){
     width: 80%;
+    padding-left: 0;
+    margin-right: 0;
   }
 `;
 const Info = styled.div`
@@ -95,6 +97,7 @@ const AddCartButton = styled.button`
    justify-content: center;
    @media (max-width: 900px) {
     max-width: 100%; 
+     margin-top: 10px; margin-right: 0;
    }
    
 `;

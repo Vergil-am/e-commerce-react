@@ -76,9 +76,11 @@ const Price = styled.span`
    position: absolute; right: 20px; bottom: 20px;
    font-size: 24px; display: flex;
    align-items: center; justify-content: center;
+   @media (max-width: 525px ){
+     font-size: 16px;
+  }
    @media (max-width: 900px){
     bottom: 10px; right: 10px;
-    
   }
 `;
 const Text = styled.p`
@@ -90,11 +92,19 @@ const Text = styled.p`
 const ProductText = styled.p`
     font-size: 24px; font-weight: bold;
     margin-left: 100px;
+   @media ( max-width: 525px) {
+     font-size: 15px;
+     margin-left: 150px;
+   }
 
 `;
 const ProductTitle = styled.h1` 
    font-weight: bold; align-self: center;
    margin-left: 100px;
+   @media ( max-width: 525px) {
+     font-size: 1.5em;
+     margin-left: 150px;
+   }
 `;
 const Button = styled.button`
     font-size: 24px; padding: 20px;
@@ -123,7 +133,6 @@ const Cart = () => {
   console.log(Cart)
   const Dispatch = useDispatch();
   const {user} = useAuth0();
-  const navigate = useNavigate();
   const handleDelete = (Product, index) => {
     const Price = Product.fields.price;
     const quantity = Product.quantity;
@@ -170,7 +179,7 @@ const Cart = () => {
                   <ProductTitle>{Product.fields.title}</ProductTitle>
                   <ProductText>Quantity: {Product.quantity}</ProductText>
                 </TextContainer>
-                <Price>Total price: {Product.fields.price * Product.quantity} <EuroSymbolRoundedIcon /></Price>
+                <Price>Total price: {Product.fields.price * Product.quantity} €</Price>
               </Link>
               <DeleteButton onClick={() => handleDelete(Product, index)}>
                 <DeleteOutlined />
@@ -181,7 +190,7 @@ const Cart = () => {
         <Card>
           <Title>Order summary</Title>
           <Text>Quantity: {Cart.quantity}</Text>
-          <Text>Total: {Cart.total} <EuroSymbolRoundedIcon /></Text>
+          <Text>Total: {Cart.total} <EuroSymbolRoundedIcon /> </Text>
           <Button onClick={handleCheckout}>Checkout <ShoppingCartCheckoutOutlined /></Button>
         </Card>
       </Wrapper>

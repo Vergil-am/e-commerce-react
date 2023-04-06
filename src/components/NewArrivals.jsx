@@ -70,8 +70,12 @@ function Card({ product }) {
 function NewArrivals({ products }) {
   const Width = window.innerWidth
   const [PerPage, setPerPage] = useState(5)
+  const [Padding, setPadding] = useState('')
   useEffect(() => {
-    if (Width < 768) {
+    if (Width < 479){
+      setPerPage(1);
+      setPadding('20%')
+    } else if (Width < 768) {
       setPerPage(2);
     } else if (Width < 992) {
       setPerPage(3)
@@ -84,7 +88,8 @@ function NewArrivals({ products }) {
       <Splide options={{
         perPage: PerPage,
         width: '95%',
-        gap: '30px'
+        gap: '30px',
+        padding: {left: Padding}
       }}
         aria-label="My Favorite Images"
       >

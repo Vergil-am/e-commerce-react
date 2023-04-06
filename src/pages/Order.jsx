@@ -22,6 +22,7 @@ const Wrapper = styled.div`
   align-items: center
 `
 const OrderContainer = styled.div`
+  position: relative;
   display: flex; background-color: rgba(34, 27, 43, 0.1);
   border-radius: 20px; padding: 5px; margin: 20px;
   flex-direction: column;
@@ -38,7 +39,7 @@ const Image = styled.img`
    height: 150px;
 `
 const ProductContainer = styled.div`
-  display: flex; justify-content: space-between;
+  display: flex; 
   align-items: center; margin: 5px;
   border-radius: 20px;
 `
@@ -46,10 +47,17 @@ const TextContainer = styled.div`
   display: flex; flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  margin-left: 20px
 `
 const Text = styled.p`
   color: black;
+  font-weight: bold;
 `
+const Date = styled.span`
+   position: absolute;
+   right: 10px; bottom: 10px
+`
+
 function Order() {
   const { user } = useAuth0()
   const [Orders, setOrders] = useState([])
@@ -85,10 +93,10 @@ function Order() {
                     <Text>Product: {product.Title}</Text>
                     <Text>Qty: {product.quantity}</Text>
                   </TextContainer>
-                  <Text>Created:<br />{order.createdAt.split('T')[0]}</Text>
                 </ProductContainer></Link>
             })}
             <Text>{order.Price}</Text>
+            <Date>Created:{order.createdAt.split('T')[0]}</Date>
           </OrderContainer>)}
       </Wrapper>
       <Footer />

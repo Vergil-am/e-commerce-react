@@ -75,7 +75,7 @@ function Home() {
             </Link>
           </TextContainer>
           <ImageContainer>
-            <HomeImage src="https://bloggingkingo.com/wp-content/uploads/2023/03/nothing-phone-1.jpg" />
+            <HomeImage src="https://images.ctfassets.net/izmdfhi52bl5/5j8pnX9GX02aycotzt5QRe/2550c1357b9fe346f633ac041c5bf9be/My_project.png" />
           </ImageContainer>
         </Background>
         <NewArrivals products={products} />

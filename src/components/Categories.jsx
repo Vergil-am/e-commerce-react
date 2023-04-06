@@ -77,7 +77,7 @@ function Categories() {
       <h1>Categories</h1>
       <CategoriesContainer>
         <Category>
-          <Image src='https://images.ctfassets.net/izmdfhi52bl5/5lr0uYq7dVQ8C9ttGmO7vT/db7bd5350f92422cd0be0eba43270283/Nothing-Ear-1-1-2-980x653.jpg?h=250' />
+          <Image src='https://images.ctfassets.net/izmdfhi52bl5/5R0Sa8OOF3WFetbM2SaFqh/aa3633d3b06dbffa67be7c8d52d77749/My_project__1_.png' />
           <Button onClick={() => Navigate(`/products?category=accessories`)}>Accessories</Button>
 
         </Category>
